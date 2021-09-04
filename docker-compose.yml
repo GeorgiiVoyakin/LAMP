@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: appDB
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d/
+  language:
+    build: ./docker
+    ports:
+      - "8080:80"
+    volumes: 
+      - ./code:/var/www/html
+
