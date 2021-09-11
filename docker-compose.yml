@@ -3,9 +3,6 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: appDB
     volumes:
       - ./init-db:/docker-entrypoint-initdb.d/
   language:
